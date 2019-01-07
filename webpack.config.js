@@ -34,7 +34,7 @@ module.exports = {
             loader: 'babel-loader',
             exclude: /node_modules/,
         }, {
-            test: /\.less$/,
+            test: /\.(less|css)$/,
             use: [{
                 loader: 'style-loader' // creates style nodes from JS strings
             }, {

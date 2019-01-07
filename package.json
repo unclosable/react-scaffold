@@ -4,7 +4,8 @@
   "description": "hhhhhhhhhhhhh",
   "main": "index.js",
   "scripts": {
-    "devServer": "webpack-dev-server --hot --open"
+    "devServer": "webpack-dev-server --hot --open",
+    "package": "cross-env NODE_ENV=test webpack "
   },
   "author": "unclosable",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "webpack-merge": "^4.1.5"
   },
   "dependencies": {
+    "antd": "^3.11.6",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-jss": "^8.6.1",
