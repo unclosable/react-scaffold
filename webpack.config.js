@@ -24,7 +24,8 @@ module.exports = {
             path: '/build'
         }),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+            'CUSTOMIZE_CONFIG': JSON.stringify(config)
         }),
         new webpack.ProvidePlugin({ React: "react" }),
     ],
@@ -50,7 +51,7 @@ module.exports = {
     },
     devServer: {
         port: 4000,
-        https: true,
+        https: false,
         historyApiFallback: true,
         contentBase: path.join(__dirname, 'page'), //本地服务器所加载的页面所在的目录
         inline: true, //实时刷新

@@ -1,24 +1,16 @@
-import { withStore } from 'store'
-import { Link } from 'react-router-dom'
-import withStyle from 'react-jss';
+import { Switch, Route } from "react-router-dom"
 
-const linkStyle = {
-    link: {
-        display: 'block'
-    }
-}
+import Test1 from './test1';
 
-class Test extends React.Component {
+import Test2 from './test2';
+class CloudControlIndex extends React.Component {
     render = () => {
-        const { classes } = this.props;
-        return <div>
-            <Link className={classes.link} to="/qqq">qqq</Link>
-            <Link className={classes.link} to="/www">www</Link>
-            <Link className={classes.link} to="/eee">eee</Link>
-            <Link className={classes.link} to="/rrrr">rrr</Link>
-            <Link className={classes.link} to="/ttt">ttt</Link>
-        </div>
+        const { match } = this.props;
+        return <Switch>
+            <Route path={`${match.path}/test1`} component={Test1} />
+            <Route path={`${match.path}/test2`} component={Test2} />
+        </Switch>
     }
 }
 
-export default withStore(withStyle(linkStyle)(Test))
+export default CloudControlIndex;

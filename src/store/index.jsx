@@ -5,8 +5,8 @@ import { testAction } from 'store/test';
 const stores = { testAction };
 
 //链接跳转
-const PUSH = dispatch => (url, search) => {
-    dispatch(push(url, { search }))
+const PUSH = dispatch => (pathname, search) => {
+    dispatch(push({ pathname, search, state: { a: 'a' } }))
 }
 
 const withStore =
